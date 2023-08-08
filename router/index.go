@@ -21,5 +21,18 @@ func ApiRouter(app *gin.Engine) {
 			//Delete the job
 			job.DELETE("/:id", controller.DeleteJobById)
 		}
+		course := api.Group("/course")
+		{
+			// Create a new course
+			course.POST("", controller.CreateCourse)
+			//Get the course list
+			course.GET("", controller.GetCourseList)
+			//Get the course by id
+			course.GET("/:id", controller.GetCourseById)
+			//Update the course
+			course.PATCH("/:id", controller.UpdateCourseById)
+			//Delete the course
+			course.DELETE("/:id", controller.DeleteCourseById)
+		}
 	}
 }

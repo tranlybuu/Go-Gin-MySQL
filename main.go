@@ -5,10 +5,6 @@ import (
 	"go-gin/router"
 )
 
-func init() {
-	//initializer.ConnectEnv()
-}
-
 func main() {
 	app := gin.Default()
 
